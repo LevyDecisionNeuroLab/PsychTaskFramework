@@ -4,7 +4,7 @@ function [ Data, existed ] = loadOrCreate(subjectId, fname)
 % and that the folders in the path to `fname` all exist.)
 
 [path, ~, ~] = fileparts(fname);
-if ~exist(path, 'dir')
+if exist(path, 'dir')==7
   mkdir(path);
 end
 

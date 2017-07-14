@@ -19,10 +19,6 @@ end
 % Find-or-create subject data file *in appropriate location*
 fname = [num2str(subjectId) '.mat'];
 folder = fullfile(config.task.taskPath, 'data');
-% Create if folder does not exist
-if exist(folder,'dir')==7
-    mkdir(folder)
-end
 fname = [folder filesep fname];
 [ Data, subjectExisted ] = loadOrCreate(subjectId, fname);
 
